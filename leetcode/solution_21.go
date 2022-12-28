@@ -1,4 +1,4 @@
-package solution21
+package leetcode
 
 import (
 	"solutions/main/leetcode/list"
