@@ -9,4 +9,17 @@ func TestRemoveDuplicates(t *testing.T) {
 		t.Logf("FAIL. Expected 5, got %v", result)
 		t.Fail()
 	}
+
+	result, expected := RemoveDuplicates([]int{0, 0}), 1
+	if result != expected {
+		t.Logf("Expected %v, got %v", expected, result)
+		t.Fail()
+	}
+
+	result, expected = RemoveDuplicates([]int{0, 0, 1, 2, 2, 2, 2, 2}), 3
+	if result != expected {
+		t.Logf("Expected %v, got %v", expected, result)
+		t.Fail()
+	}
+
 }
