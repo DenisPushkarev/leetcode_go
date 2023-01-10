@@ -13,7 +13,6 @@ func singleNumber(nums []int) int {
 		} else {
 			intSet[n] = exists
 		}
-		// fmt.Printf("%v, intSet %v\n", v, intSet)
 	}
 	for n := range intSet {
 		return n
