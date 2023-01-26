@@ -1,30 +1,18 @@
 package leetcode
 
-import (
-	"strings"
-)
-
 func longestCommonPrefix(strs []string) string {
-	var minIndex int = 0
-	found := false
-	for i := 0; i < len(strs); i++ {
-		if len(strs[minIndex]) < len(strs[i]) {
-			minIndex = i
-		}
-	}
-
-	for i := len(strs[minIndex]); i >= 0; i-- {
-		found = true
-		str := strs[minIndex][0:i]
+	var c1, c2 byte
+	for i := 0; i < len(strs[0]); i++ {
+		c1 = strs[0][i]
 		for j := 0; j < len(strs); j++ {
-			if !strings.HasPrefix(strs[j], str) {
-				found = false
+			if len(strs[j])-1 < i {
+				return strs[j]
+			}
+			c2 = strs[j][i]
+			if c1 != c2 {
+				return strs[0][:i]
 			}
 		}
-		if found {
-			return strs[minIndex][:i]
-		}
 	}
-	return strs[minIndex][0:0]
-
+	return strs[0]
 }
