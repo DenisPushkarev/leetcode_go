@@ -6,6 +6,10 @@ type ListNode struct {
 }
 
 func deleteNode(node *ListNode) {
+	node.Val, node.Next = node.Next.Val, node.Next.Next
+}
+
+func deleteNode2(node *ListNode) {
 	prev := node
 	for node.Next != nil {
 		next := node.Next
