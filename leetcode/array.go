@@ -1,4 +1,4 @@
-package array
+package leetcode
 
 func Equal(arr1 []int, arr2 []int) bool {
 	eq := true

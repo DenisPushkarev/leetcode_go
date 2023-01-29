@@ -1,4 +1,4 @@
-package list
+package leetcode
 
 import (
 	"fmt"

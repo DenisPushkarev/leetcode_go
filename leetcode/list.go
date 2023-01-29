@@ -1,4 +1,4 @@
-package list
+package leetcode
 
 import (
 	"fmt"
@@ -9,6 +9,26 @@ import (
 type ListNode struct {
 	Val  int
 	Next *ListNode
+}
+
+func ToArray(head *ListNode) []int {
+	var a []int = make([]int, 0)
+	for head != nil {
+		a = append(a, head.Val)
+		head = head.Next
+	}
+	return a
+}
+
+func Make(values []int) *ListNode {
+	if len(values) == 0 {
+		return nil
+	} else {
+		return &ListNode{
+			Val:  values[0],
+			Next: Make(values[1:]),
+		}
+	}
 }
 
 func BuildList(str string) *ListNode {
